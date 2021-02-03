@@ -1,0 +1,60 @@
+;Run the program to check the correct version
+;Then check the errors, by removing their commenting
+;Then check the Empty table errors, by removing their commenting
+;Then check for remaining errors one by one 
+;Then check for the functionalities at once
+
+ ;   :   ADD    R     ;ERROR
+    
+ ;    SUB   '=3    ;ERROR
+   ;  ADD   =7'     ;ERROR
+
+
+ ;    MUL    =5     ;ERROR
+
+ ;  DIV    '1'     ;ERROR  
+ ;   DIV    '=THREE'      ;STACK TRACE AND TERMINATE (NumberFormatException)
+ ;  MUL    '=128'     ;FATAL ERROR  
+  ;  BRP    R     ;FATAL ERROR
+   CLA  
+;ADD '=0';FUNCTIONALITY 
+;ADD '=1';FUNCTIONALITY
+   FACT   :    LAC        P
+  ;    FACT   :   ADD    R     ;ERROR
+   ;   ADD   FACT     ;FATAL ERROR
+		SAC        R
+		SUB       D                  ;D=1
+		SAC        COUNT
+
+
+;CLA P     ;ERROR
+;ADD     ;ERROR
+		LOOP:   MUL  R
+		   		   SAC    R
+		             LAC    COUNT
+		             SUB    D		;D=1
+		             SAC     COUNT
+		             BRP    LOOP
+				  
+
+;D=1   .R,P - FOR ADDRESSES
+;BRP   RLABEL     ;EMPTY TABLE ERROR
+;ADD A     ;EMPTY TABLE ERROR
+    D      DC     1    
+    COUNT    DW    120    
+
+
+   R     DW     119    
+   P    DW    124   
+
+     ;      L         DC        -1           ;FATAL ERROR  
+    ; Q      DW      110         ;FATAL ERROR
+
+;L DW 126     ;FUNCTIONALITY
+;MUL L     ;FUNCTIONALITY
+;K DW 112     ;FUNCTIONALITY
+;K DW 113     ;FUNCTIONALITY
+;J DC 1     ;FUNCTIONALITY
+; J DC 2     ;FUNCTIONALITY
+
+     STP
